@@ -62,9 +62,18 @@
             "summary": "Indicate which fields should be disabled from logging separated by comma. They should match the exact name given in loggerProcessor.json schema",
             "example": "e.g. message, content",
             "required": false,
-            "expressionSupport": "REQUIRED"
+            "expressionSupport": "SUPPORTED"
           },
           "note": "This field is mandatory. DON'T REMOVE"
+        },
+        "enabledCategories": {
+          "type": "string",
+          "sdk": {
+            "summary": "Comma-separated values to indicate which log categories should be enabled",
+            "example": "com.acme.business,com.acme.customer",
+            "required": false,
+            "expressionSupport": "SUPPORTED"
+          }
         }
       },
       "sdk": {

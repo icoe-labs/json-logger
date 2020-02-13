@@ -44,6 +44,14 @@
         "summary": "Message to be logged"
       }
     },
+    "logCategory": {
+      "type": "string",
+      "sdk": {
+        "example": "Add a log category",
+        "required": true,
+        "summary": "Log Category"
+      }
+    },
     "content": {
       "type": "string",
       "javaType": "org.mule.runtime.extension.api.runtime.parameter.ParameterResolver<org.mule.runtime.api.metadata.TypedValue<Object>>",

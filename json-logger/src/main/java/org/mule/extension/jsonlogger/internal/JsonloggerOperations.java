@@ -182,7 +182,18 @@ public class JsonloggerOperations implements Initialisable {
         } catch (Exception e) {
             log.error("Error parsing log data as a string", e);
         }
-        doLog(loggerProcessor.getPriority().toString(), logLine);
+        
+        //Check if log category is in the list of enabled categories
+        List<String> enabledCategories = (config.getJsonOutput().getEnabledCategories() != null) ? Arrays.asList(config.getJsonOutput().getEnabledCategories().split(",")) : new ArrayList<>();
+        
+        if (enabledCategories.contains(loggerProcessor.getLogCategory().toString()))
+        {
+        	doLog(loggerProcessor.getPriority().toString(), logLine);
+        }
+        else
+        {
+        	//Skip Emitting Log
+        }
 
         callback.success(VOID_RESULT);
     }
